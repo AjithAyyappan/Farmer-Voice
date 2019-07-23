@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+@media(max-width:360px){
+body{
+	background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+    background: url(38.jpg);
+    background-size: auto;
+    background-position: top;
+    font-family: sans-serif;
+}
+}
+
+@media(min-width:361px){
+body{
+	background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+    background: url(38.jpg);
+    background-size: auto;
+    background-position: top;
+    font-family: sans-serif;
+}
+}
+
+@media(min-width:701px){
+body{
+	background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+    background: url(38.jpg);
+    background-size: auto;
+    background-position: top;
+    font-family: sans-serif;
+}
+}
+
+@media(min-width:1000px){
+body{
+	background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+    background: url(38.jpg);
+    background-size: cover;
+    background-position: top;
+    font-family: sans-serif;
+}
+}

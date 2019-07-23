@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" href="new.png" type="image/png" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>login</title>
+<link rel="stylesheet" href="log.css" type="text/css">
+<script>
+		var request;
+		function login(){
+			var uid=document.logform.uid.value;
+			var pwd=document.logform.pwd.value;
+			var url="login.jsp?uid="+uid+"&pwd="+pwd;
+			if(window.XMLHttpRequest){ request=new XMLHttpRequest(); }
+			else if(window.ActiveXObject) { request=new ActiveXObject("Microsoft.XMLHTTP");  }
+			try{
+				request.onreadystatechange=getInfo;
+				request.open("GET",url,true);
+				request.send();
+			}catch(e){alert("Unable to connect");}
+		}
+		function getInfo()	
+			{
+			if(request.readyState==4){ var val=request.responseText;
+			document.getElementById("demo").innerHTML=val;
+			}
+			}
+		</script>
+<style>
+h1{
+text-align:center;
+font-size:50px;
+background-color:darkblue;
+width:100%;
+height:80px;
+margin-top:1px;
+color:white;
+}
+
+.login-box{
+	margin-top:70px;
+    width: 320px;
+    height:520px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.h{
+	
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.login-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login-box input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.login-box input[type="submit"]
+{
+ 	margin-left:30%;
+ 	margin-top:15%;
+    border: none;
+    outline: none;
+    height: 40px;
+    width:100px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.login-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
+.login-box a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.login-box a:hover
+{
+    color: #39dc79;
+}
+p{
+margin-top:8%;
+font-size:20px;
+font-family:sans-serif;
+}
+.pp{
+font-size:20px;
+font-color:red;
+}
+</style>
+</head>
+<body>
+<div class="login-box">
+
+<h2 class="h">Login Here</h2>
+<form action="login.jsp"  method="post" class="form" name="logform">
+Username:<input type="text" name="uid" placeholder="Enter username"><br>
+Password:<input type="password" name="pwd" placeholder="Enter password"><br>
+<input type="submit" value="login"/>
+<br><p class="pp" id="demo">New to Farmer's Voice?</p><input type="submit" formaction="register.html" value="Register" />
+</form>
+</div>
+<h1 style="text-align:center; position:absolute" ><i>FARMER'S VOICE</i></h1>
+
+</body>
+</html>
